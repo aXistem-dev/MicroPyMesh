@@ -1,0 +1,32 @@
+{
+  "name": "MicroPy Mesh",
+  "publisher": "aXistem",
+  "short_description": "MeshCore messenger for the built-in LoRa radio",
+  "long_description": "MicroPy Mesh is a MeshCore messenger for MicroPythonOS devices with a built-in SX1262 LoRa radio, laid out for 480x480 touch screens (developed on the SenseCAP Indicator D1L). Public, hashtag and private channels; encrypted direct messages with delivery acknowledgements; contacts and discovered nodes; repeater and room login, status and trace; routing with typed paths, path hash sizes and region scopes; an offline map from SD card tiles; light and dark themes. Runs in the background to keep receiving while the app is closed. An independent, community-built client: not affiliated with or endorsed by the MeshCore project. MESHCORE is a trademark of its owner.",
+  "fullname": "eu.axistem.micropymesh",
+  "version": "0.1.0",
+  "category": "communication",
+  "activities": [
+    {
+      "entrypoint": "main_activity.py",
+      "classname": "MeshCoreHome",
+      "intent_filters": [
+        {
+          "action": "main",
+          "category": "launcher"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "entrypoint": "meshcore_boot_service.py",
+      "classname": "MeshCoreBootService",
+      "intent_filters": [
+        {
+          "action": "boot_completed"
+        }
+      ]
+    }
+  ]
+}
